@@ -41,16 +41,6 @@ logs: 			## check the logs of the runner
 stop:				## Stop the runner
 	npx pm2 stop ./actions-runner/run.sh
 
-
-# status:				## Check the status of the daemon runner
-# 	./venv/bin/circusctl status
-
-stdout_logs:				## Tail the stdout logs 
-	tail -f ./runner_stdout.log
-
-stderr_logs:				## Tail the error logs 
-	tail -f ./runner_stderr.log
-
 help:						## Show this help.
 	@echo "Github Runner Installation Scripts"
 	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m<target>\033[0m (default: help)\n\nTargets:\n"} /^[a-zA-Z_-]+:.*?##/ { printf "  \033[36m%-12s\033[0m %s\n", $$1, $$2 }' $(MAKEFILE_LIST)
