@@ -1,0 +1,6 @@
+venv
+runner_stderr.log
+runner_stdout.log
+actions-runner
+.env
+node_modules

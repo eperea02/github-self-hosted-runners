@@ -1,0 +1,5 @@
+psutil==6.0.0
+python-dotenv==1.0.0
+pyzmq==26.2.0
+supervisor==4.2.5
+tornado==6.4.1
