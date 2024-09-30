@@ -8,7 +8,7 @@ activate: 				## Activate Python Environment
 
 install: 				## Install a new runner for a respository
 	@echo "creating virtual environment..."
-	@python3 -m venv venv
+	@/usr/intel/pkgs/python3/3.10.8/bin/python3 -m venv venv
 	@echo "activating environment..."
 	@source ./venv/bin/activate
 	@echo "updating pip..."
@@ -38,8 +38,15 @@ status: 			## check the status of the runner
 logs: 			## check the logs of the runner
 	npx pm2 logs
 
+errlogs: 		## check only the error logs of the runner
+	npx pm2 logs --err
+
+outlogs: 		## check only the stdout logs of the runner
+	npx pm2 logs --out
+
 stop:				## Stop the runner
 	npx pm2 stop ./actions-runner/run.sh
+
 
 help:						## Show this help.
 	@echo "Github Runner Installation Scripts"

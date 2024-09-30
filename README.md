@@ -25,7 +25,11 @@ TCSH:
     setenv TOKEN '<TOKEN>'
 ```
 
+### Installation
+
 To install a new github runner run `make install` on a SLES15 IT EC machine. Once installed it can be run interactively with `make run`.
+
+### PM2 Daemon
 
 To daemonize the runner with process monitoring you can run the following:
 
