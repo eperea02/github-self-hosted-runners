@@ -12,6 +12,13 @@ logging.basicConfig(stream=sys.stdout, level=logging.INFO, format='%(asctime)s -
 
 load_dotenv()
 
+
+# Updating path to have nodejs
+current_path = os.environ.get('PATH')
+dir_to_add = '/usr/intel/pkgs/nodejs/19.0.0/bin/'
+os.environ['PATH'] = dir_to_add + ':' + current_path
+
+
 URL = os.environ.get("URL")
 TOKEN = os.environ.get("TOKEN")
 
