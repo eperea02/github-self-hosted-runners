@@ -60,4 +60,4 @@ except Exception:
     logging.error(f"Your TOKEN is: {TOKEN}")
     sys.exit(1)
 
-subprocess.run(["npm", "ci"], check=True)
+subprocess.run(["/usr/intel/pkgs/nodejs/19.0.0/bin/npm", "ci"], check=True)

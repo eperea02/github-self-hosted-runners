@@ -2,6 +2,7 @@
 .PHONY: build run install token
 
 SHELL := /bin/bash
+NPX := /usr/intel/pkgs/nodejs/19.0.0/bin/npx
 
 activate: 				## Activate Python Environment
 	@source ./venv/bin/activate
@@ -30,23 +31,22 @@ run:				## Run the runner interactively like normal
 	./actions-runner/run.sh
 
 daemon:				## Run the runner with a supervisord daemon manager to monitor process
-	npx pm2 start ./actions-runner/run.sh --interpreter bash --output ./runner_stdout.log --error ./runner_sterr.log
+	${NPX} pm2 start ./actions-runner/run.sh --interpreter bash --output ./runner_stdout.log --error ./runner_sterr.log
 
 status: 			## check the status of the runner
-	npx pm2 status
+	${NPX} pm2 status
 
 logs: 			## check the logs of the runner
-	npx pm2 logs
+	${NPX} pm2 logs
 
 errlogs: 		## check only the error logs of the runner
-	npx pm2 logs --err
+	${NPX} pm2 logs --err
 
 outlogs: 		## check only the stdout logs of the runner
-	npx pm2 logs --out
+	${NPX} pm2 logs --out
 
 stop:				## Stop the runner
-	npx pm2 stop ./actions-runner/run.sh
-
+	${NPX} pm2 stop ./actions-runner/run.sh
 
 help:						## Show this help.
 	@echo "Github Runner Installation Scripts"
