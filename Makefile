@@ -13,6 +13,9 @@ dir_to_add='/usr/intel/pkgs/nodejs/19.0.0/bin/'
 export PATH=$dir_to_add:$current_path
 
 
+printpath:
+	@echo $PATH
+
 activate: 				## Activate Python Environment
 	@source ./venv/bin/activate
 
