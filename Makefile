@@ -8,13 +8,11 @@ export http_proxy=http://proxy-dmz.intel.com:911
 export https_proxy=http://proxy-dmz.intel.com:912
 export no_proxy=127.0.0.1,localhost,.intel.com
 
-current_path=$PATH
-dir_to_add='/usr/intel/pkgs/nodejs/19.0.0/bin/'
-export PATH=$dir_to_add:$current_path
+dir_to_add := /usr/intel/pkgs/nodejs/19.0.0/bin/
+export PATH := $(dir_to_add):$(PATH)
 
-
-printpath:
-	@echo $PATH
+print-path:
+	@echo $(PATH)
 
 activate: 				## Activate Python Environment
 	@source ./venv/bin/activate
